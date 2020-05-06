@@ -73,15 +73,12 @@ var main = function (toDoObjects) {
 				$button.on("click", function () {
 					var description = $input.val();
 					var tags = $tagInput.val().split(",");
-					//toDoObjects.push({"description":description, "tags":tags});
 				//add
 					var newToDo = {"description":description, "tags":tags};
 
 					$.post("todos", newToDo, function (result) {
 						console.log("result");
-						//console.log(result);
 						toDoObjects.push(newToDo);
-					//});
 
 						toDos = toDoObjects.map(function (toDo) {
 							return toDo.description;
